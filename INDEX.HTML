@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF=8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PORTFOLIO</title>
+        <link rel="stylesheet" href="STYLE.CSS">
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="IMAGES/letter-n.png"  width="50px" height="50px" alt="" class="logo">
+                    
+
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                     </ul>    
+                </nav>
+                <div class="header-text">
+                    <p>Certified Ethical Hacker</p>
+                    <h1>Hi,I'm <span>Sathwik</span><br> From India </h1>
+                </div>
+            </div>
+        </div>
+       <! -----------------------about------------------>
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        
+                    </div>
+                    <div class="about-col-2">
+                          <h1 class="sub-title"><strong>About Me</strong></h1>
+                          <p>I'm sathwik , Certified Ethical Hacker(C|EH) from Hyderbad India.<br>
+                             completed graduation from Bvrit hyderbad. Enthusiast to work 
+                             as a Ethical hackerWorked for the Telangana state Cybercrime Branch  
+                          </p>
+                          <div class="tab-title">
+                            <p class="tab-links active-links" onclick="opentab('skills')">Skills</p>
+                            
+                            <p class="tab-links" onclick="opentab('education')">Education</p> 
+
+                          </div>
+                          <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Devops</span><br>Dockers , container</li>
+                                <li><span>CEH</span><br>Ethical hacking</li>
+                                <li><span>Python</span><br>programming</li>
+
+                            </ul>
+                          </div>
+                          <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2022</span><br>Python programming at Udemy</li>
+                                <li><span>2022</span><br>Devops at Tutedude</li>
+                                <li><span>2023</span><br>pragramatic approach<br>to cybersecurity at C-DAC</li>
+
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--------------------------------contact----------------------------->    
+        <div id="contact">
+            <div class="container">
+               <div class="row">
+                    <div class="contact-left">
+                       <h1 class="sub-title">contact me</h1>
+                        <p><img src="IMAGES/mail.png" width="20px" height="30px">sathwikjennarapu0401@gmail.com</p>
+                        <p>8074497576</p>
+                        <div class="social-icons">
+                          <a href="https://github.com/sathwik0401"><img src="IMAGES/git.png" width="30px" height="30px"></a>
+                          <a href="https://www.instagram.com/sathwik_0401/?hl=en"><img src="IMAGES/instagram.png" width="30px" height="30px"></a>
+                          <a href="https://www.linkedin.com/in/sathwik-jennarapu-99854a243/"><img src="IMAGES/linkedin.png" width="30px" height="30px"></a>
+                          <a href="http://www.facebook.com"><img src="IMAGES/facebook.png" width="30px" height="30px"></a>
+                        </div>    
+                                    <a href="IMAGES/Resume_21EG105A59.pdf" download class="btn">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                     <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="your name" required>
+                        <input type="email" name="Email"  placeholder="Your email" required>
+                        <textarea  name="Message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                     </form>
+                    </div>
+               </div>
+            </div>
+        </div>    
+        <script>
+
+            
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+             
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz0feOJnqs551ywh3niBFlAmyM8DTmwvC0Nu-0MXncd3_PFUwTemL0DUoTL_W4xcnWlSQ/exec'
+            const form = document.forms['submit-to-google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        
+    </body>
+</html>
